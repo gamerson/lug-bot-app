@@ -16,7 +16,7 @@ export function acceptProposal(taskId: string, proposalId: string) {
 
 // GET APIs
 export function useCurrentTasks() {
-	const {data} = useSWR(`${API_DOMAIN}/status/current`);
+	const {data} = useSWR(`${API_DOMAIN}/status`);
 
 	return {tasks: data};
 }
