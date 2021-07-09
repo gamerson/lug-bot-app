@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"debug": "NODE_OPTIONS='--inspect' next dev",
+		"debugLugbot": "NODE_OPTIONS='--inspect' API_DOMAIN='localhost:9000' next dev",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
