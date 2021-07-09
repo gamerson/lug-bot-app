@@ -2,13 +2,13 @@
 
 import {IncomingMessage} from 'http';
 
+const API_DOMAIN = process.env.API_DOMAIN || 'localhost:3000/api';
+
 export default function getAPIOrigin(
 	req?: IncomingMessage,
-	localhostAddress = 'localhost:3000'
+	localhostAddress = `${API_DOMAIN}`
 ) {
-	let host =
-		(req?.headers ? req.headers.host : window.location.host) ||
-		localhostAddress;
+	let host = localhostAddress || (req?.headers ? req.headers.host : window.location.host);
 	let protocol = /^localhost(:\d+)?$/.test(host) ? 'http:' : 'https:';
 
 	if (
